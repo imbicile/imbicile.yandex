@@ -23,7 +23,6 @@
     yandex_user_add:
       - login: "newuser_1"
         password: "H@rdp@ZZw0rd"
-        status: "present"
         iname: "Имя_1"
         fname: "Фамилия_1"
         enabled: "yes"
@@ -34,7 +33,6 @@
 
       - login: "newuser_2"
         password: "H@rdp@ZZw0rd"
-        status: "present"
         iname: "Имя_2"
         fname: "Фамилия_2"
         enabled: "yes"
