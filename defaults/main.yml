@@ -1,0 +1,20 @@
+---
+# defaults file for imbicile.yandex
+
+yandex_domain: "imbicile.pp.ru" # https://admin.yandex.ru/users
+yandex_token: "XXXXXXXXXXXXXXX" # https://pddimp.yandex.ru/api2/admin/get_token
+
+yandex_user_add:
+  - login: ""
+    password: ""
+    iname: ""
+    fname: ""
+    enabled: ""
+    birth_date: ""
+    sex: ""
+    hintq: ""
+    hinta: ""
+
+yandex_user_del:
+  - login: ""
+    status: ""

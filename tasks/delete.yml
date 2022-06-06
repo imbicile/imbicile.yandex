@@ -1,0 +1,10 @@
+---
+# tasks file for imbicile.yandex
+# https://yandex.ru/dev/pdd/doc/reference/email-del.html
+
+- name: delete yandex {{ yandex_domain }} user
+  shell: |
+    curl -s \
+      -H "PddToken: {{ yandex_token }}" \
+      -d "domain={{ yandex_domain }}&login={{ yandex_delete_user.login }}" \
+      "https://pddimp.yandex.ru/api2/admin/email/del"

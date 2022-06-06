@@ -1,0 +1,17 @@
+---
+# tasks file for imbicile.yandex
+# https://yandex.ru/dev/pdd/doc/concepts/access.html
+
+- include: create.yml
+  tags:
+    - create
+  loop: "{{ yandex_user_add }}"
+  loop_control:
+    loop_var: yandex_create_user
+
+- include: delete.yml
+  tags:
+    - delete
+  loop: "{{ yandex_user_del }}"
+  loop_control:
+    loop_var: yandex_delete_user

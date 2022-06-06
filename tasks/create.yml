@@ -1,0 +1,15 @@
+---
+# tasks file for imbicile.yandex
+# https://yandex.ru/dev/pdd/doc/reference/email-add.html
+
+- name: create yandex {{ yandex_domain }} user
+  shell: |
+    curl -s -H "PddToken: {{ yandex_token }}" \
+      -d "domain={{ yandex_domain }}&login={{ yandex_create_user.login }}&password={{ yandex_create_user.password }}" \
+      "https://pddimp.yandex.ru/api2/admin/email/add"
+
+- name: add yandex {{ yandex_domain }} user info
+  shell: |
+    curl -s -H "PddToken: {{ yandex_token }}" \
+      -d "domain={{ yandex_domain }}&login={{ yandex_create_user.login }}&iname={{ yandex_create_user.iname }}&fname={{ yandex_create_user.fname }}&enabled={{ yandex_create_user.enabled }}&birth_date={{ yandex_create_user.birth_date }}&sex={{ yandex_create_user.sex }}&hintq={{ yandex_create_user.hintq }}&hinta={{ yandex_create_user.hinta }}" \
+      "https://pddimp.yandex.ru/api2/admin/email/edit"
